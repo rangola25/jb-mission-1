@@ -3,11 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form validation</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/app.js"></script>
+    <script defer src="assets/js/app.js"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
-    
+<body class="p-3 mb-2 bg-dark text-white">
+    <h1 class="text-center">Add Product</h1>
+    <hr>
+    <div class="container text-center">
+        <div class="row align-items-center">
+          <div class="col"><img class="size2" src="assets/images/superShop.jpg" alt=""><img class="size2" src="assets/images/superShop3.jpg" alt=""></div>
+          <div class="col">
+
+    <form class="p-3 mb-2 bg-secondary text-white" id="productsForm" onsubmit="addProductToTable(event)">
+   <label class="form-label" for="productName">Product name:</label>
+   <input class="form-control" id="productName" type="text" required>
+   <br><br>
+
+   <label class="form-label" for="price">price:</label>
+   <input class="form-control" id="price" type="number" required>
+   <br><br>
+
+   <label class="form-label" for="select">Category:</label>
+   <select class="form-control" id="select" required>
+    <option value="">Select a product</option> 
+    <option value="Drinks">Drinks</option>
+    <option value="Meat">Meat</option>
+    <option value="Dairy">Dairy</option>
+    <option value="Snacks">Snacks</option>
+    <option value="Basic">Basic</option>
+    </select>
+   <br><br>
+
+   <label class="form-label" for="URL">URL picture:</label>
+   <input class="form-control" id="URL" type="text" required>
+   <br><br>
+
+   <button class="btn btn-success">Add Product</button>
+</form>
+</div>
+<div class="col"><img class="size2" src="assets/images/superShop2.jpg" alt=""><img class="size2" src="assets/images/superShop4.jpg" alt=""></div>
+</div>
+
+<h2>My cart</h2>
+
+<table class="table">
+    <thead>
+       <tr class="table-warning">
+        <th>Product name</th>
+        <th>price</th>
+        <th>Type</th>
+        <th>Image</th>
+        <th>Actions</th>
+       </tr>
+    </thead>
+    <tbody id="productsContainer">
+    </tbody>
+</table>
 </body>
 </html>
